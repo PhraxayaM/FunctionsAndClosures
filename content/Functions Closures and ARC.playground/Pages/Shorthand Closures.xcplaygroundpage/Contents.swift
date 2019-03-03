@@ -88,9 +88,33 @@ add(newGuest: eric) { print("There are \($0 - 1) guests ahead of me") }
  ## Give it a try!
  Rewrite your sorting closure to be a single line of code
  */
-
+let sam = Guest(name: "Sam", age: 17)
+let sara = Guest(name: "Sara", age: 23)
+let charlie = Guest(name: "Charlie", age: 18)
 
 //copy and paste your sorting closure here and rewrite it to be a single line of code
+
+//sort these numbers
+let numbersToSort = [2, 4, 4, 2, 1, 0]
+
+let sortingNumbers = numbersToSort.sorted {$0 < $1 }
+print(sortingNumbers)
+
+//sort the guests by name
+let guestsToSort = [sam, eric, sara, charlie]
+
+let nameSorting = guestsToSort.sorted { $0.name < $1.name }
+print(nameSorting)
+
+//sort the guests by age, but in descending order (youngest at the front of the array)
+
+let guestsYoungestToOldest = guestsToSort.sorted { $0.age < $1.age }
+print(guestsYoungestToOldest)
+
+//filter the guests to only include guests younger than 18 years
+let youngerThanEighteen = guestsToSort.filter { (guestA) -> Bool in
+    return guestA.age < 18
+}
 
 
 /*:
